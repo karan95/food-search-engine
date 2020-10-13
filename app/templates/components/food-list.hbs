@@ -1,0 +1,22 @@
+<h6>Filter food items based on the contents</h6>
+<table class="table table-dark table-bordered table-hover">
+  <thead>
+    <tr class="d-flex">
+      <th scope="col" class="col-3">Label</th>
+      <th scope="col" class="col-6">
+        <input type="text" class="form-control" onkeyup={{action "searchByFoodContent"}}
+          placeholder="Search Food Contents" aria-describedby="basic-addon1">
+      </th>
+      <th scope="col" class="col-3">Category Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each foodItemList as |foodItem|}}
+    <tr class="d-flex">
+      <td class="col-3">{{foodItem.food.label}}</td>
+      <td class="col-6">{{foodItem.food.foodContentsLabel}}</td>
+      <td class="col-3">{{foodItem.food.categoryLabel}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

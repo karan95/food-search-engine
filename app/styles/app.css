@@ -1,0 +1,43 @@
+.food-app-header {
+    color: darkcyan;
+}
+
+.food-search-btn {
+    border: none;
+    cursor: pointer;
+    background: darksalmon;
+    color: #ffffff !important;
+    font-weight: 500;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+
+.food-search-btn[disabled=disabled], .food-search-btn:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop;
+}
+
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.food-search-btn:hover {
+    color: darkcyan !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: none;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}
+
+.food-list-container {
+    padding-top: 20px;
+}

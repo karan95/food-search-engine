@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="food-app-header">Welcome to food Search Engine</h1>
+  <h6>Click on 'Get Food Dishes' button to get list of food items based on entered input text(EX: banana, apple)</h6>
+  
+  <div class="input-group mb-3">
+    <Input type="text" @value={{this.foodkey}} class="input-control" placeholder="Enter Food Name" />
+    <div class="input-group-append">
+      <button class="food-search-btn" disabled={{searchDisabled}} onclick={{action "getFoodRecords"}}>Get Food Dishes</button>
+    </div>
+  </div>
+
+  {{#if searchDisabled}}
+    <div class="text-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  {{/if}}
+  {{#if foodItemList}}
+    <div class="food-list-container">
+      <FoodList @foodItemList={{foodItemList}}></FoodList>
+    </div>
+  {{/if}}
+
+</div>
