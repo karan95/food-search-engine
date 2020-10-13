@@ -3,7 +3,7 @@
   <h6>Click on 'Get Food Dishes' button to get list of food items based on entered input text(EX: banana, apple)</h6>
   
   <div class="input-group mb-3">
-    <Input type="text" @value={{this.foodkey}} class="input-control" placeholder="Enter Food Name" />
+    <Input type="text" @value={{this.foodkey}} id="search-input" class="input-control" placeholder="Enter Food Name" />
     <div class="input-group-append">
       <button class="food-search-btn" disabled={{searchDisabled}} onclick={{action "getFoodRecords"}}>Get Food Dishes</button>
     </div>

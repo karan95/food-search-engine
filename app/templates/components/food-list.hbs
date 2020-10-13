@@ -4,7 +4,7 @@
     <tr class="d-flex">
       <th scope="col" class="col-3">Label</th>
       <th scope="col" class="col-6">
-        <input type="text" class="form-control" onkeyup={{action "searchByFoodContent"}}
+        <input type="text" class="search-table form-control" onkeyup={{action "searchByFoodContent"}}
           placeholder="Search Food Contents" aria-describedby="basic-addon1">
       </th>
       <th scope="col" class="col-3">Category Label</th>
@@ -12,11 +12,11 @@
   </thead>
   <tbody>
     {{#each foodItemList as |foodItem|}}
-    <tr class="d-flex">
-      <td class="col-3">{{foodItem.food.label}}</td>
-      <td class="col-6">{{foodItem.food.foodContentsLabel}}</td>
-      <td class="col-3">{{foodItem.food.categoryLabel}}</td>
-    </tr>
+      <tr class="d-flex">
+        <td class="col-3">{{foodItem.food.label}}</td>
+        <td class="col-6">{{foodItem.food.foodContentsLabel}}</td>
+        <td class="col-3">{{foodItem.food.categoryLabel}}</td>
+      </tr>
     {{/each}}
   </tbody>
 </table>
