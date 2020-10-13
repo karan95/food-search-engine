@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import { tracked } from '@glimmer/tracking';
-import Ember from 'ember';
-
+import { debounce } from '@ember/runloop'
 export default Component.extend({
     @tracked foodItemList: null,
     initialFoodItemList: null,
@@ -19,7 +18,7 @@ export default Component.extend({
         }
         // modifying original food item list 
         if (this.foodItemList && this.foodItemList.length > 0 && searchText !== '') {
-            this.foodItemList = this.foodItemList.filter((foodItem) => {
+            this.foodItemList = this.initialFoodItemList.filter((foodItem) => {
                 if (foodItem.food.foodContentsLabel) {
                     return foodItem.food.foodContentsLabel.toLowerCase().includes(searchText.toLowerCase());
                 }
@@ -34,7 +33,7 @@ export default Component.extend({
         searchByFoodContent(e) {
             // added debounce of 1 seconds so it won't filter every text in span of 1 second
             // only last value event value present will be applied to filterFoodContents function
-            Ember.run.debounce(this, this.filterFoodContents,e, 1000);
+            debounce(this, this.filterFoodContents,e, 500);
         }
     }
 });
